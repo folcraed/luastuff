@@ -1,2 +1,2 @@
 # luastuff
-Lua scripting and playground
+My Lua scripting playground and experiments.
