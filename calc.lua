@@ -1,9 +1,11 @@
 -- Making a simple CLI calculator
 
+-- Get the user input
 print("Enter a calculation:")
 local myString = io.read()
 local ops = { "+", "-", "*", "/" }
 
+-- Seperate the operation from the numbers
 for i, _ in ipairs(ops) do
   if string.find(myString, ops[i]) ~= nil then
     Loc = string.find(myString, ops[i])
@@ -11,13 +13,21 @@ for i, _ in ipairs(ops) do
   end
 end
 
-if Op == nil then
-   error("Invalid operation! Try again.")
+-- Get and assign the numbers to variables
+-- Wrapping it in a function is required for error checking
+local function getNums()
+  A = string.sub(myString, 1, (Loc - 1))
+  B = string.sub(myString, (Loc + 1), -1)
 end
 
-A = string.sub(myString, 1, (Loc - 1))
-B = string.sub(myString, (Loc + 1), -1)
+-- Check that the user entered a valid operator
+if pcall(getNums) then
+  print()
+else
+  print("Invalid operator! Try again")
+end
 
+-- Perform the match and return the result
 if Op == "-" then
    print("Result: " .. A - B)
 elseif Op == "+" then
@@ -27,9 +37,3 @@ elseif Op == "*" then
 elseif Op == "/" then
    print("Result: " .. A / B)
 end
-
---[[
-   TODO: Need to figure out how to suppress the error traceback, make
-   a cleaner error message that wouldn't end up just confusing
-   a user.
---]]
