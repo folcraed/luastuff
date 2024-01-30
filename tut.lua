@@ -32,10 +32,13 @@ for k, _ in pairs(Months) do
   print(k)
 end
 
+--- Takes it's input and wraps it in hash marks
 Myprint = function(param)
   print("This is my print function - ## " .. param .. " ##")
 end
 
+--- Adds two numbers, then passes them to another function
+--- for further processing.
 function Add(num1, num2, otherFunction)
   local result = num1 + num2 -- First parameters are numbers
   otherFunction(result) -- 3rd parameter, in this case another function
@@ -48,6 +51,8 @@ Add(2, 5, Myprint)
 
 -- If we don't know ahead of time how many parameters will be passed to a function,
 -- we can use a placeholder "..." which tells Lua to accept any number of parameters.
+
+--- Takes a list of numbers passed to it, and returns their average.
 function Average(...)
   local result = 0
   local arg = { ... }
@@ -59,6 +64,7 @@ end
 
 print("The average is " .. Average(12, 15, 22, 9, 17, 31))
 
+--- Takes two numbers, finds the modulo remainder.
 function Remainder(a, b)
   local result = a % b
   return result
