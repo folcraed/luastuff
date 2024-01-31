@@ -4,9 +4,6 @@
     whereas "io.write" does not. Use "\n" for newlines with it.
 --]]
 
--- MyString = "Just some words"
--- print("The index of \'some\' is:", (string.find(MyString, "some")), "\n")
-
 Months = {
   "January",
   "February",
