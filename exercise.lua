@@ -10,17 +10,18 @@ end
 
 -- Use the metatable
 -- TODO Change this to accept user input to create several zombies
-function Setup()
+function AddZombie()
     Z1 = Zombie.init(176, 50, "slow", "Forbes & Murray Avenue")
 end
 
-function Run()
+function ShowZombies()
     print(Z1.location .. ": " ..
         Z1.height .. " cm, " ..
         Z1.weight .. "kg, " ..
         Z1.speed)
 end
 
+--
 -- Will need to change this when accepting user input.
-Setup()
-Run()
+AddZombie()
+ShowZombies()
