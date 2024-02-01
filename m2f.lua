@@ -18,7 +18,7 @@ for i, _ in ipairs(conv_value) do
 	if string.find(conversion, conv_value[i]) ~= nil then
 		local conv_from = string.find(conversion, conv_value[i])
 		OriginalDistance = string.sub(conversion, 1, (conv_from - 1))
-		OriginalMeasure = string.sub(conversion, conv_from)
+		OriginalMeasure = string.sub(conversion, -1)
 	end
 end
 

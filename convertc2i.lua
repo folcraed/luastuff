@@ -15,11 +15,11 @@ end
 
 -- The conversion functions
 function ToCentimeters(inches)
-	print("\n" .. inches .. " inches = " .. Round(inches / 0.39370, 1) .. " centimeters.")
+	print("\n" .. inches .. " inches = " .. Round(inches / 0.39370, 2) .. " centimeters.")
 end
 
 function ToInches(centimeters)
-	print("\n" .. centimeters .. " centimeters = " .. Round(centimeters * 0.39370, 1) .. " inches.")
+	print("\n" .. centimeters .. " centimeters = " .. Round(centimeters * 0.39370, 2) .. " inches.")
 end
 
 -- Get the user's input and store it for later parsing
@@ -37,7 +37,7 @@ for i, _ in ipairs(user_input) do
 	if string.find(choice, user_input[i]) ~= nil then
 		Loc = string.find(choice, user_input[i])
 		Original = string.sub(choice, 1, (Loc - 1))
-		Convert = string.sub(choice, Loc)
+		Convert = string.sub(choice, -1)
 	end
 end
 
