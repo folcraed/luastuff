@@ -1,22 +1,27 @@
 --[[
-Lua version of a temperature converter I created in Javascript.
-It asks the user what and type to convert in format like "32c",
+A simple Fahrenheit - Celsius converter.
+It asks the user value and type to convert
+in format of "32c" if converting from celsius,
+or "32f" if converting from fahrenheit,
 then outputs the result.
 ]]
 
 -- The conversion functions.
-function ToCelcius(fahrenheit)
+
+--- Converts input fahrenheit to celsius
+function ToCelsius(fahrenheit)
 	local temp = ((5 / 9) * (fahrenheit - 32))
-	print("\nThat is " .. math.floor(temp) .. " celcius.")
+	print("\nThat is " .. math.floor(temp) .. " celsius.")
 end
 
-function ToFahrenheit(celcius)
-	local temp = ((celcius * 9 / 5) + 32)
+--- Converts input celsius to fahrenheit
+function ToFahrenheit(celsius)
+	local temp = ((celsius * 9 / 5) + 32)
 	print("\nThat is " .. math.floor(temp) .. " fahrenheit.")
 end
 
 -- Get the user's input and see what type conversion they want.
-print("Enter like 32c to convert Celcius to Fahrenheit, 32f to convert Fahrenheit to Celcius:")
+print("Enter like 32c to convert celsius to Fahrenheit, 32f to convert Fahrenheit to celsius:")
 local conversion = io.read()
 local temp_val = { "c", "f" }
 
@@ -32,7 +37,7 @@ end
 if From_val == "c" then
 	ToFahrenheit(Temperature)
 elseif From_val == "f" then
-	ToCelcius(Temperature)
+	ToCelsius(Temperature)
 else
 	print("You didn't enter a conversion, try again.")
 end
