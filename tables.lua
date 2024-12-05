@@ -20,29 +20,35 @@
 -- end
 
 -- Difference between pairs and ipairs
-local mytable = {'dog', 'wolf'}
-print('pairs in mytable:')
-for k,v in pairs(mytable) do
-  print(k,v)
+local mytable = { "dog", "wolf" }
+print("pairs in mytable:")
+for k, v in pairs(mytable) do
+	print(k, v)
 end
+-- Pairs prints the index key and the value
 
--- Add a key to the table
-mytable.horse = 'stallion' -- add a key value
-print('ipairs of mytable')
-for i,v in ipairs(mytable) do -- ipairs will ignore the key
-  print(i,v)
+-- Add a no-numeric key to the table
+mytable.horse = "stallion" -- add a key value
+print("ipairs of mytable")
+for i, v in ipairs(mytable) do
+	print(i, v)
 end
+-- ipairs will ignore the non-numeric key
 
--- ipairs will only return a value with an index
--- pairs returns the index if there is no key
--- but will also return the key if one exists
-print('pairs in mytable:')
-for i,v in pairs(mytable) do -- pairs will print the key too
-  print(i,v)
+-- ipairs will only return a value with a numerical index
+-- pairs returns the index regardless if it's a numerical key or not
+print("pairs in mytable:")
+for i, v in pairs(mytable) do -- pairs will print the key too
+	print(i, v)
 end
 
 --[[
-It seems to me that ipairs is useful if you are using a table without keys,
-and are only concerned with returning the values. pairs is what you'd want
-if the table contains keys and the keys are important to the process.
-]]--
+ipairs is useful if you create a table without creating index keys, and
+just want to return values in the order they were entered.
+
+pairs is what you'd want if the table contains keys you created and the
+keys are important to the process, or you're searching for a particular
+value associated with a known key.
+]]
+--
+
