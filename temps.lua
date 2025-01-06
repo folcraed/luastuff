@@ -7,7 +7,7 @@
 local open = io.open
 local CPUFile = "/sys/class/thermal/thermal_zone2/temp"
 
--- We use a function to extract the temperature to avoid file permission problems
+--- Function to extract the temperature and hopefully avoid file permission problems
 function ReadCPU()
 	local f = open(CPUFile)
 	if f then

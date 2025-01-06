@@ -7,17 +7,18 @@
    math, that function was found on StackOverflow.
 ]]
 
--- From Stackoverflow, this rounds down to 1 decimal place.
+--- From Stackoverflow, rounds down to 1 decimal place.
 function Round(number, decimals)
 	local power = 10 ^ decimals
 	return math.floor(number * power) / power
 end
 
--- The conversion functions
+--- Takes input in inches and converts to centimeters
 function ToCentimeters(inches)
 	print("\n" .. inches .. " inches = " .. Round(inches / 0.39370, 2) .. " centimeters.")
 end
 
+--- Takes input in centimeters and converts it to inches
 function ToInches(centimeters)
 	print("\n" .. centimeters .. " centimeters = " .. Round(centimeters * 0.39370, 2) .. " inches.")
 end
