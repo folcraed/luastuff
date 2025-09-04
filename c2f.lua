@@ -4,7 +4,7 @@ It asks the user value and type to convert
 in format of "32c" if converting from celsius,
 or "32f" if converting from fahrenheit,
 then outputs the result.
-]]
+--]]
 
 -- The conversion functions.
 
